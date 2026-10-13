@@ -223,3 +223,28 @@ Brand Assets
 - Background removed from the logo using remove.bg.
 - Logo image saved in the "client/public/images" folder.
 - HEX color codes collected using an image color picker.
+
+11. Reference Website Research
+
+SkyElectric
+
+- The navigation bar includes Company, Products, Projects, System Components, and Contact Us.
+- Dropdown menus display additional options under Company and Products.
+- The homepage uses an automatic hero image slider to display different promotional messages.
+- The design uses a clean navigation structure and large hero images.
+
+Pantera Energy
+
+- The website displayed a human-verification check that requested Windows keyboard commands.
+- The verification instructions were not followed, and the website was closed for safety.
+
+SolarPanels.pk
+
+- The website could not be reached during the research session.
+
+Design Inspiration for ME Technologies
+
+- Use a clear and simple navigation bar.
+- Organize engineering services into easy-to-understand categories.
+- Use a professional hero section with a clear heading and call-to-action buttons.
+- Keep the design responsive and easy to navigate.
