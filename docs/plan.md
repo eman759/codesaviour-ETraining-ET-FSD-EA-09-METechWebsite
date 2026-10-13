@@ -139,3 +139,87 @@ Footer:
 - Prepare a transparent PNG version.
 - Identify brand colors from the official logo.
 - Use readable fonts and accessible color contrast.
+
+8. Company Information
+
+- Company Name: ME Technologies
+- Industry: Engineering Services
+- Company Type: Self-employed
+- Company Size: 1 employee (as listed on LinkedIn)
+- About: ME Technologies is a startup in the engineering and technology field. It works with software related to electrical engineering, including Proteus, SketchUp, MATLAB, and Multisim.
+- LinkedIn: https://www.linkedin.com/company/metechnologies/
+- Facebook: https://www.facebook.com/METechnologies45/
+
+9. Company Social Media Research
+
+LinkedIn Research
+
+- Company Name: ME Technologies
+- Industry: Engineering Services
+- Company Type: Self-employed (as listed on LinkedIn)
+- Company Size: 1 employee (as listed on LinkedIn)
+- Description: ME Technologies is a startup in the engineering and technology field. It works with software related to electrical engineering, including Proteus, SketchUp, MATLAB, and Multisim.
+- LinkedIn: https://www.linkedin.com/company/metechnologies/
+
+Facebook Research
+
+- Page Name: ME Technologies
+- Followers: 307 (as displayed on the page)
+- Description: ME Technologies is an engineering consultancy focused on providing professional consulting across multiple engineering disciplines.
+- Facebook: https://www.facebook.com/METechnologies45/
+
+10. Verified Company Information
+
+Consulting Areas
+
+- Electrical Engineering
+- Solar PV
+- Battery Energy Storage Systems (BESS)
+- EV Charging
+- Architecture and Building Design
+- Civil and Structural Engineering
+
+Contact Information
+
+- Business Contact: 0316 6379325
+
+Content Research Notes
+
+- The company shares information about its consulting areas, engineering insights, and projects.
+- Available Facebook content includes company posts and photos.
+- The website should use verified company information.
+- Do not invent real client names, completed projects, or testimonials.
+
+11. Brand Colors Research
+
+Logo Color Palette
+
+The following HEX color codes were identified from the ME Technologies logo using an image color picker.
+
+- Dark Green: "#09893E"
+- Light Green: "#55CA1A"
+- Yellow: "#FFD22F"
+- Dark Green: "#12753D"
+- Light Green: "#2EAA11"
+- Yellow-Gold: "#CBC53A"
+- Olive Green: "#559629"
+- Light Green: "#6AA74D" 
+- Green: "#3E9D69"
+- Mustard Yellow: "#A6AE2A"
+- Brown/Olive: "#687900"
+- Dark Green: "#064702"
+
+Color Usage Plan
+
+- Use dark green for headings and important buttons.
+- Use light green for highlights and accents.
+- Use yellow and mustard tones for small decorative elements.
+- Maintain readable text and sufficient color contrast.
+- Match the website colors with the official ME Technologies logo.
+
+Brand Assets
+
+- Company logo downloaded from the ME Technologies Facebook page.
+- Background removed from the logo using remove.bg.
+- Logo image saved in the "client/public/images" folder.
+- HEX color codes collected using an image color picker.
