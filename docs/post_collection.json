@@ -1,9 +1,31 @@
 {
   "info": {
     "name": "ME Technologies API",
-    "description": "Postman collection for testing authentication, services, courses and batches APIs.",
+    "description": "API testing collection for authentication, services, courses and batches.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "adminToken",
+      "value": "YOUR_ADMIN_TOKEN"
+    },
+    {
+      "key": "serviceId",
+      "value": "REPLACE_WITH_SERVICE_ID"
+    },
+    {
+      "key": "courseId",
+      "value": "REPLACE_WITH_SOLAR_DESIGN_COURSE_ID"
+    },
+    {
+      "key": "batchId",
+      "value": "REPLACE_WITH_BATCH_ID"
+    }
+  ],
   "item": [
     {
       "name": "Authentication",
@@ -22,7 +44,7 @@
               "mode": "raw",
               "raw": "{\n  \"email\": \"admin@metech.com\",\n  \"password\": \"YOUR_ADMIN_PASSWORD\"\n}"
             },
-            "url": "http://localhost:5000/api/auth/login"
+            "url": "{{baseUrl}}/api/auth/login"
           }
         }
       ]
@@ -34,11 +56,11 @@
           "name": "Get All Services",
           "request": {
             "method": "GET",
-            "url": "http://localhost:5000/api/services"
+            "url": "{{baseUrl}}/api/services"
           }
         },
         {
-          "name": "Create Service",
+          "name": "Create Test Service",
           "request": {
             "method": "POST",
             "header": [
@@ -48,14 +70,48 @@
               },
               {
                 "key": "Authorization",
-                "value": "Bearer YOUR_ADMIN_TOKEN"
+                "value": "Bearer {{adminToken}}"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Test Service\",\n  \"slug\": \"test-service\",\n  \"description\": \"Test service for API\",\n  \"icon\": \"zap\",\n  \"order\": 7,\n  \"shortText\": \"Testing our services API\"\n}"
+              "raw": "{\n  \"title\": \"Test Service\",\n  \"slug\": \"test-service\",\n  \"description\": \"Temporary service for API testing\",\n  \"icon\": \"zap\",\n  \"order\": 7,\n  \"shortText\": \"Testing services API\"\n}"
             },
-            "url": "http://localhost:5000/api/services"
+            "url": "{{baseUrl}}/api/services"
+          }
+        },
+        {
+          "name": "Update Service",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Test Service\",\n  \"slug\": \"test-service\",\n  \"description\": \"Updated service for API testing\",\n  \"icon\": \"zap\",\n  \"order\": 7,\n  \"shortText\": \"Updated services API test\"\n}"
+            },
+            "url": "{{baseUrl}}/api/services/{{serviceId}}"
+          }
+        },
+        {
+          "name": "Delete Test Service",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/services/{{serviceId}}"
           }
         }
       ]
@@ -67,11 +123,11 @@
           "name": "Get All Courses",
           "request": {
             "method": "GET",
-            "url": "http://localhost:5000/api/courses"
+            "url": "{{baseUrl}}/api/courses"
           }
         },
         {
-          "name": "Create Course",
+          "name": "Create Test Course",
           "request": {
             "method": "POST",
             "header": [
@@ -81,14 +137,48 @@
               },
               {
                 "key": "Authorization",
-                "value": "Bearer YOUR_ADMIN_TOKEN"
+                "value": "Bearer {{adminToken}}"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"title\": \"Test Course\",\n  \"slug\": \"test-course\",\n  \"description\": \"Temporary course for API testing\",\n  \"duration\": \"1 week\",\n  \"fee\": 0,\n  \"tools\": [\"AutoCAD\"],\n  \"outline\": [\"Basic testing\"]\n}"
             },
-            "url": "http://localhost:5000/api/courses"
+            "url": "{{baseUrl}}/api/courses"
+          }
+        },
+        {
+          "name": "Update Test Course",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Test Course\",\n  \"slug\": \"test-course\",\n  \"description\": \"Updated temporary course for API testing\",\n  \"duration\": \"2 weeks\",\n  \"fee\": 0,\n  \"tools\": [\"AutoCAD\"],\n  \"outline\": [\"Updated testing\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/courses/{{courseId}}"
+          }
+        },
+        {
+          "name": "Delete Test Course",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/courses/{{courseId}}"
           }
         }
       ]
@@ -100,11 +190,11 @@
           "name": "Get All Batches",
           "request": {
             "method": "GET",
-            "url": "http://localhost:5000/api/batches"
+            "url": "{{baseUrl}}/api/batches"
           }
         },
         {
-          "name": "Create Batch",
+          "name": "Create Test Batch",
           "request": {
             "method": "POST",
             "header": [
@@ -114,14 +204,48 @@
               },
               {
                 "key": "Authorization",
-                "value": "Bearer YOUR_ADMIN_TOKEN"
+                "value": "Bearer {{adminToken}}"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Test Batch\",\n  \"course\": \"6ad0a0d88650a52031f6e35b\",\n  \"startDate\": \"2026-11-01\",\n  \"endDate\": \"2026-11-29\",\n  \"totalSeats\": 20,\n  \"mode\": \"online\",\n  \"status\": \"upcoming\"\n}"
+              "raw": "{\n  \"name\": \"Test Batch\",\n  \"course\": \"{{courseId}}\",\n  \"startDate\": \"2026-11-01\",\n  \"endDate\": \"2026-11-29\",\n  \"totalSeats\": 20,\n  \"mode\": \"online\",\n  \"status\": \"upcoming\"\n}"
             },
-            "url": "http://localhost:5000/api/batches"
+            "url": "{{baseUrl}}/api/batches"
+          }
+        },
+        {
+          "name": "Update Test Batch",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Test Batch\",\n  \"course\": \"{{courseId}}\",\n  \"startDate\": \"2026-11-01\",\n  \"endDate\": \"2026-11-29\",\n  \"totalSeats\": 20,\n  \"mode\": \"online\",\n  \"status\": \"upcoming\"\n}"
+            },
+            "url": "{{baseUrl}}/api/batches/{{batchId}}"
+          }
+        },
+        {
+          "name": "Delete Test Batch",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/batches/{{batchId}}"
           }
         }
       ]
