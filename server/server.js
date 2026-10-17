@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
@@ -11,6 +12,7 @@ const enrollmentRoutes = require("./routes/enrollmentRoutes");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/services", require("./routes/serviceRoutes"));
