@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Navbar */}
-<nav className="flex flex-wrap items-center justify-between gap-4 bg-white px-4 py-5 shadow md:px-8">
+<nav className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 bg-white px-4 py-5 shadow md:px-8">
   <h1 className="text-2xl font-bold text-blue-800">
     ME Technologies
   </h1>
@@ -465,9 +465,49 @@ function App() {
 </a>
 
       {/* Footer */}
-      <footer className="bg-gray-900 px-8 py-5 text-center text-white">
-        <p>© 2026 ME Technologies. All rights reserved.</p>
-      </footer>
+<footer className="bg-gray-900 px-4 py-10 text-white md:px-8">
+  <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 md:grid-cols-3">
+    <div>
+      <h2 className="text-xl font-bold">ME Technologies</h2>
+      <p className="mt-3 text-gray-300">
+        Smart Engineering Today. Sustainable Tomorrow.
+      </p>
+      <p className="mt-3 text-gray-300">
+        Engineering solutions, sustainable energy systems, and technical training.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-bold">Quick Links</h3>
+      <div className="mt-3 flex flex-col gap-2 text-gray-300">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#training">Training</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-bold">Contact Us</h3>
+      <p className="mt-3 text-gray-300">Phone: 0316 6379325</p>
+      <a
+        href="https://wa.me/923166379325"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 inline-block text-green-400"
+      >
+        WhatsApp Us
+      </a>
+      <p className="mt-2 text-gray-300">Email: Contact us for inquiries</p>
+    </div>
+  </div>
+
+  <div className="mx-auto mt-8 max-w-6xl border-t border-gray-700 pt-5 text-center text-sm text-gray-400">
+    <p>© 2026 ME Technologies. All rights reserved.</p>
+    <p className="mt-2">Privacy Policy | Terms and Conditions</p>
+  </div>
+</footer>
     </div>
   );
 }
