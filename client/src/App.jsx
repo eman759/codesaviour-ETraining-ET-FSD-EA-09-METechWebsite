@@ -29,28 +29,56 @@ function App() {
 
     fetchServices();
   }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Navbar */}
-<nav className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 bg-white px-4 py-5 shadow md:px-8">
-  <h1 className="text-2xl font-bold text-blue-800">
-    ME Technologies
-  </h1>
+<nav className="sticky top-0 z-50 bg-white px-4 py-4 shadow md:px-8">
+  <div className="flex items-center justify-between gap-3">
+    <h1 className="text-xl font-bold text-blue-800 md:text-2xl">
+      ME Technologies
+    </h1>
 
-  <div className="flex flex-wrap items-center gap-4 md:gap-6">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#training">Training</a>
-    <a href="#contact">Contact</a>
+    <button
+      type="button"
+      className="rounded border border-blue-800 px-3 py-2 text-blue-800 md:hidden"
+      onClick={() => setMenuOpen(!menuOpen)}
+      aria-label="Toggle navigation menu"
+    >
+      {menuOpen ? "Close" : "☰"}
+    </button>
+
+    <div className="hidden items-center gap-6 md:flex">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
+      <a
+        href="#contact"
+        className="rounded-lg bg-blue-800 px-5 py-3 text-white"
+      >
+        Get a Quote
+      </a>
+    </div>
   </div>
 
-  <a
-    href="#contact"
-    className="rounded-lg bg-blue-800 px-5 py-3 text-white"
-  >
-    Get a Quote
-  </a>
+  {menuOpen && (
+    <div className="mt-4 flex flex-col gap-4 border-t pt-4 md:hidden">
+      <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+      <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
+      <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+      <a href="#training" onClick={() => setMenuOpen(false)}>Training</a>
+      <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+      <a
+        href="#contact"
+        onClick={() => setMenuOpen(false)}
+        className="rounded-lg bg-blue-800 px-5 py-3 text-center text-white"
+      >
+        Get a Quote
+      </a>
+    </div>
+  )}
 </nav>
 
       {/* Hero Section */}
