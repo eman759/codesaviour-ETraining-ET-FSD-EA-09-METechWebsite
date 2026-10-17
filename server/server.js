@@ -8,6 +8,7 @@ const projectRoutes = require("./routes/projectRoutes");
 const postRoutes = require("./routes/postRoutes");
 const leadRoutes = require("./routes/leadRoutes");
 const enrollmentRoutes = require("./routes/enrollmentRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/leads", leadRoutes);
 app.use("/api/enrollments", enrollmentRoutes);
+app.use("/api/uploads", uploadRoutes);
+app.use("/uploads", express.static("uploads"));
 
 mongoose
   .connect(process.env.MONGO_URI)
