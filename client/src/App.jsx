@@ -334,11 +334,123 @@ function App() {
 </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-blue-950 px-8 py-12 text-center text-white">
-        <h2 className="text-3xl font-bold">Let’s Work Together</h2>
-        <p className="mt-4 text-gray-300">
-          Contact us to discuss your engineering project.
-        </p>
+      <section
+        id="contact"
+        className="bg-blue-950 px-4 py-12 text-white md:px-8"
+      >
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-center text-3xl font-bold">
+            Let’s Work Together
+          </h2>
+
+          <p className="mb-8 mt-4 text-center text-gray-300">
+            Contact us to discuss your engineering project.
+          </p>
+
+          <form
+            className="space-y-4"
+            onSubmit={async (event) => {
+              event.preventDefault();
+
+              const form = event.currentTarget;
+              const formData = new FormData(form);
+
+              const lead = {
+                name: formData.get("name"),
+                phone: formData.get("phone"),
+                email: formData.get("email"),
+                city: formData.get("city"),
+                service: formData.get("service"),
+                message: formData.get("message"),
+                source: "contact"
+              };
+
+              try {
+                const response = await fetch(
+                  "http://localhost:5000/api/leads",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(lead)
+                  }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                  throw new Error(result.message || "Submission failed");
+                }
+
+                alert("Thank you! Your message has been submitted.");
+                form.reset();
+              } catch (error) {
+                alert(error.message || "Could not submit your message.");
+              }
+            }}
+          >
+            <input
+              name="name"
+              required
+              placeholder="Full Name"
+              className="w-full rounded-lg p-3 text-gray-900"
+            />
+
+            <input
+              name="phone"
+              required
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full rounded-lg p-3 text-gray-900"
+            />
+
+            <input
+              name="email"
+              required
+              type="email"
+              placeholder="Email Address"
+              className="w-full rounded-lg p-3 text-gray-900"
+            />
+
+            <input
+              name="city"
+              required
+              placeholder="City"
+              className="w-full rounded-lg p-3 text-gray-900"
+            />
+
+            <select
+              name="service"
+              required
+              defaultValue=""
+              className="w-full rounded-lg p-3 text-gray-900"
+            >
+              <option value="" disabled>Select a Service</option>
+              <option value="Electrical Engineering">Electrical Engineering</option>
+              <option value="Solar System Design">Solar System Design</option>
+              <option value="Engineering Software">Engineering Software</option>
+              <option value="3D Design">3D Design</option>
+              <option value="Technical Training">Technical Training</option>
+              <option value="Engineering Consultation">Engineering Consultation</option>
+            </select>
+
+            <textarea
+              name="message"
+              required
+              rows="4"
+              placeholder="Tell us about your project"
+              className="w-full rounded-lg p-3 text-gray-900"
+            />
+
+            <button
+              type="submit"
+              className="w-full rounded-lg bg-blue-500 px-6 py-3 font-semibold text-white hover:bg-blue-600"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </section>
 
       {/* Floating WhatsApp Button */}
