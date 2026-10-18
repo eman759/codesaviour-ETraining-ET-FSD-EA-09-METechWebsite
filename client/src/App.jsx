@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Admin from "./Admin";
 function App() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -540,4 +541,12 @@ function App() {
   );
 }
 
-export default App;
+function MainApp() {
+  return window.location.pathname === "/admin" ? (
+    <Admin />
+  ) : (
+    <App />
+  );
+}
+
+export default MainApp;
